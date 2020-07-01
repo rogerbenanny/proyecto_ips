@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,101 +18,102 @@
     <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/adminlte.min.css")}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
-    <body class="hold-transition sidebar-mini sidebar-collapse">
+
+    <body class="hold-transition  sidebar-collapse">
         <!-- Site wrapper -->
         <div class="wrapper">
+
             <!--Inicio header-->
             @include('theme/lte/header')
             <!--Fin header-->
+
             <!--Inicio aside-->
             @include('theme/lte/aside')
             <!--Fin aside-->
-            <div class="content-wrapper">
+
+            <div class="content-wrapper" style="background :url(../imagen/uni4.png);">
                 <!-- Content Header (Page header) -->
                 <div class="content-header">
-                    <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                        <h1 class="m-0 text-dark" >Programas Academicos Peru</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-
-                        </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
+                     <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class=" mt-5">
+                                <h1 class="bg-ligth">Programas Academicos Peru</h1>
+                            </div>
+                        </div>
                     </div><!-- /.container-fluid -->
                 </div>
 
-                <section class="content">
-                    <div class="container-fluid">
+                <section class="content mt-5">
+                    <div class="row justify-content-center">
                       <!-- Small boxes (Stat box) -->
                       <div class="row">
-                        <div class="col-lg-3 col-6">
+                      <div class="col-lg-2"></div>
+                      <div class="col-lg-4 ">
 
-                          <!-- small box -->
-                          <div class="small-box bg-info">
-                            <div class="inner">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                          <div class="inner">
 
 
-                              <p style="font-size: 35px">Universidades</p>
-                            </div>
-                            <div class="icon">
-                              <i class="fas fa-university"></i>>
-                            </div>
-                            <a href="#" class="small-box-footer">Aceeder <i class="fas fa-arrow-circle-right"></i></a>
+                            <p style="font-size: 35px">Universidades</p>
                           </div>
+                          <div class="icon">
+                            <i class="fas fa-university"></i>>
+                          </div>
+                          <a class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
+                      </div>
 
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                          <!-- small box -->
+                        <!-- ./col -->
 
+                        <div class="col-lg-4 "
+                        <!-- small box -->
                           <div class="small-box bg-success">
-                            <div class="inner">
-
-
-                              <p style="font-size: 35px">Pro. Academicos</p>
-                            </div>
-                            <div class="icon">
-                               <i class="far fa-list-alt"></i>>
-                            </div>
-                            <a href="#" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+                                <div class="inner">
+                                <p style="font-size: 35px">Pro. Academicos</p>
+                                </div>
+                                <div class="icon">
+                                <i class="text-center far fa-list-alt"></i>>
+                                </div>
+                                <a class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
                           </div>
                         </div>
+
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-2"></div>
 
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 ">
                           <!-- small box -->
-                          <div class="small-box bg-warning">
-                            <div class="inner">
-
-
-                              <p style="font-size: 35px">Departamentos</p>
-                            </div>
-                            <div class="icon">
-                              <i class="fas fa-globe-americas"></i>>
-                            </div>
-                            <a href="#" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+                          <div class="small-box bg-primary">
+                                 <div class="inner">
+                                <p style="font-size: 35px" >Departamentos</p>
+                                </div>
+                                <div class="icon">
+                                <i class="fas fa-globe-americas"></i>>
+                                </div>
+                                <a class="small-box-footer ">Acceder <i class="fas fa-arrow-circle-right"></i></a>
                           </div>
                         </div>
+
 
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                          <!-- small box -->
-                          <div class="small-box bg-danger">
-                            <div class="inner">
-
-
-                              <p style="font-size: 35px">Estadisticas</p>
+                        <div class="col-lg-4 ">
+                            <!-- small box -->
+                            <div class="small-box bg-danger">
+                              <div class="inner">
+                                <p style="font-size: 35px">Estadisticas</p>
+                              </div>
+                              <div class="icon">
+                                  <i class="fas fa-chart-bar"></i>>
+                              </div>
+                              <a class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                            <div class="icon">
-                                <i class="fas fa-chart-bar"></i>>
-                            </div>
-                            <a href="#" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
-                          </div>
                         </div>
+
                         <!-- ./col -->
                       </div>
                     </div>
@@ -122,6 +124,7 @@
             @include('theme/lte/footer')
             <!--Fin footer-->
         </div>
+
         <script src="{{asset("assets/$theme/plugins/jquery/jquery.min.js")}}"></script>
         <!-- Bootstrap 4 -->
         <script src="{{asset("assets/$theme/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
