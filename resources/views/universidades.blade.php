@@ -103,7 +103,7 @@
                   <div>
                   
                   <input class="form-control form-control-navbar " type="search" placeholder="Search" aria-label="Search" >
-                  <i class="fas fa-search"></i>
+              
                   </div>
                  </div>
                   <div class="col-3 ml-3 ">
@@ -136,7 +136,7 @@
                   <button type="button" class="btn btn-secondary btn-sm">Aplicar</button>                
                       </div>
                </div>
-               <textarea  readonly="readonly" name="" id="" type=""cols="120  " rows="15"> </textarea>
+               <textarea  readonly="readonly" name="" id="" type=""cols="120  " rows="14"> </textarea>
             </div>
         </div><!-- /.row -->            
      </div>
