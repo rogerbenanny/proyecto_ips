@@ -101,9 +101,7 @@
                   <div class="col-3 text-left">
                   <a>Buscar</a>
                   <div>
-
                   <input class="form-control form-control-navbar " type="search" placeholder="Search" aria-label="Search" >
-
                   </div>
                  </div>
                   <div class="col-3 ml-3 ">
@@ -140,13 +138,13 @@
             </div>
         </div><!-- /.row -->
      </div>
-    <script src="{{asset('assets\lte/plugins/jquery/jquery.min.js')}}"></script>
+        <script src="{{asset('assets\lte/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-     <script src="{{asset('assets\lte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('assets\lte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="{{asset('assets\lte/dist/js/adminlte.min.js')}}"></script>
+        <script src="{{asset('assets\lte/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('assets\lte/dist/js/demo.js')}}"></script>
-     <script src="https://kit.fontawesome.com/2d377ef0a3.js" crossorigin="anonymous"></script>
-</body>
+        <script src="{{asset('assets\lte/dist/js/demo.js')}}"></script>
+        <script src="https://kit.fontawesome.com/2d377ef0a3.js" crossorigin="anonymous"></script>
+    </body>
 </html>
