@@ -22,7 +22,7 @@
 <body class="hold-transition sidebar-mini sidebar-collapse">
     <!--Fin header-->
     @include('theme/lte/aside')
-   
+
     <!--Inicio aside-->
     <nav class="main-header navbar navbar-expand navbar-info navbar-light">
     <!-- Left navbar links -->
@@ -31,22 +31,22 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item mt-2 d-none d-sm-inline-block">
-         <a>UNIVERSIDADES</a>
+         <a>UNI</a>
         </li>
     </ul>
-    
+
     </nav>
     <div class="main-header mt-3  ">
           <a href="\" class="h5 text-info ml-5" style="background-color:white">Inicio</a>
           <a>></a>
           <a href="\" class="h5 text-dark" style="background-color:white"> Universidades</a>
-    </div>  
+    </div>
   <div class=" container-fluid main-header text-center">
-        
+
         <div class="row ">
           <div class="accordion  main-header mt-5" id="accordionExample">
            <div class="card">
-             <div class="card-header" id="headingOne"> 
+             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
                   <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                   <a class="font-weight-bold text-dark">Departamento</a>
@@ -91,19 +91,19 @@
             </div>
           </div>
         </div>
-          <div class="col-6 "> 
-           <div class="mt-5"> 
+          <div class="col-6 ">
+           <div class="mt-5">
                 <h1 >Universidades del Perú</h1>
-            </div><!-- /.col -->  
+            </div><!-- /.col -->
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                </div>
                   <div class="col-3 text-left">
                   <a>Buscar</a>
                   <div>
-                  
+
                   <input class="form-control form-control-navbar " type="search" placeholder="Search" aria-label="Search" >
-              
+
                   </div>
                  </div>
                   <div class="col-3 ml-3 ">
@@ -116,11 +116,11 @@
                       <a class="dropdown-item" href="#">privado</a>
                       <a class="dropdown-item" href="#">publico</a>
                     </div>
-                  </div>              
+                  </div>
                   </div>
                   <div class="col-2 ml-3">
                   <a >Orden</a>
-                  
+
                   <div class="btn-group" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-white dropdown-toggle  border border-brown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Ascendente
@@ -129,16 +129,16 @@
                       <a class="dropdown-item" href="#">Ascendente</a>
                       <a class="dropdown-item" href="#">Descendente</a>
                     </div>
-                  </div>              
+                  </div>
                   </div>
                   <div class="col-2 mt-2  ml-5">
-                  
-                  <button type="button" class="btn btn-secondary btn-sm">Aplicar</button>                
+
+                  <button type="button" class="btn btn-secondary btn-sm">Aplicar</button>
                       </div>
                </div>
                <textarea  readonly="readonly" name="" id="" type=""cols="120  " rows="14"> </textarea>
             </div>
-        </div><!-- /.row -->            
+        </div><!-- /.row -->
      </div>
     <script src="{{asset('assets\lte/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
