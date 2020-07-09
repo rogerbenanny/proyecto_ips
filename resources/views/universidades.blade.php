@@ -41,7 +41,7 @@
           <a>></a>
           <a href="\" class="h5 text-dark" style="background-color:white"> Universidades</a>
     </div>
-  <div class=" container-fluid main-header text-center">
+    <div class=" container-fluid main-header text-center">
 
         <div class="row ">
           <div class="accordion  main-header mt-5" id="accordionExample">
