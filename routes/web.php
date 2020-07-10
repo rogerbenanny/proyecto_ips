@@ -13,16 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','InicioController@index')->name('ini');
-//Route::get('/', function () {
-  //  return view('welcome');
-//});
-//Route::view('biblioteca','welcome');
-Route::get('nota', 'notaController@index');
+Route::get('/','InicioController@index') -> name('ini');
 
-Route::get('/universidades', function () {
-  return view('universidades');
-})->name('universidades');
+Route::get('/universidades', 'UniversidadesController@index') -> name('universidades');
 
 Route::get('/universidades/{uniCod}', function($uniCod) {
     //return view('universidad', ['uni' => Universidad::findOrFail($uniCod)]);
