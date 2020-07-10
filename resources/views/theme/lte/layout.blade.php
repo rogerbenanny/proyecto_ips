@@ -28,17 +28,17 @@
             <!--Fin header-->
             @include('theme/lte/aside')
             <!--Inicio aside-->
-        
+
             <!--Fin aside-->
             <div class="content-wrapper bg-dark" >
                 <!-- Content Header (Page header) -->
                 <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class=" mt-5"> 
+                        <div class=" mt-5">
                         <h1 >Programas Academicos Peru</h1>
-                        </div><!-- /.col -->  
+                        </div><!-- /.col -->
                     </div><!-- /.row -->
-                    
+
                 </div>
 
                 <section class="content mt-5">
@@ -58,7 +58,7 @@
                             <div class="icon">
                               <i class="fas fa-university"></i>>
                             </div>
-                            <a href="{{route('univer')}}" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('universidades')}}" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
                           </div>
                         </div>
 
@@ -67,14 +67,14 @@
                           <!-- small box -->
 
                           <div class="small-box bg-success">
-                           
+
                             <div class="inner">
                               <p style="font-size: 35px">Pro. Academicos</p>
                             </div>
                             <div class="icon">
                                <i class="text-center far fa-list-alt"></i>>
                             </div>
-                            <a href="{{route('proac')}}" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('programasacademicos')}}" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
                           </div>
                         </div>
                         <div class="col-lg-2"></div>
@@ -89,7 +89,7 @@
                             <div class="icon">
                               <i class="fas fa-globe-americas"></i>>
                             </div>
-                            <a href="{{route('depar')}}" class="small-box-footer ">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('departamentos')}}" class="small-box-footer ">Acceder <i class="fas fa-arrow-circle-right"></i></a>
                           </div>
                         </div>
 
@@ -103,7 +103,7 @@
                             <div class="icon">
                                 <i class="fas fa-chart-bar"></i>>
                             </div>
-                            <a href="{{route('estad')}}" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('estadisticas')}}" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
                           </div>
                         </div>
                         <!-- ./col -->
@@ -113,7 +113,7 @@
 
             </div>
             <!--Inicio footer-->
-            
+
             <!--Fin footer-->
         </div>
         <script src="{{asset('assets\lte/plugins/jquery/jquery.min.js')}}"></script>

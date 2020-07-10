@@ -13,24 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','InicioController@index')->name('ini');
-//Route::get('/', function () {
-  //  return view('welcome');
-//});
-//Route::view('biblioteca','welcome');
-Route::get('nota', 'notaController@index');
-//Route::view('nota','nota');
-Route::get('/universidades', function () {
-  return view('universidades');
-})->name('univer');
+Route::get('/','InicioController@index') -> name('ini');
+
+Route::get('/universidades', 'UniversidadesController@index') -> name('universidades');
+
+Route::get('/universidades/{uniCod}', function($uniCod) {
+    //return view('universidad', ['uni' => Universidad::findOrFail($uniCod)]);
+    return view('universidad', ['uniCod' => $uniCod]);
+}) -> where('uniCod', '[0-9]+');
+
 Route::get('/departamentos', function () {
   return view('departamentos');
-})->name('depar');
+})->name('departamentos');
+
 Route::get('/estadisticas', function () {
   return view('estadisticas');
-})->name('estad');
+})->name('estadisticas');
+
 Route::get('/programasacademicos', function () {
   return view('programasacademicos');
-})->name('proac');
+})->name('programasacademicos');
 
 
