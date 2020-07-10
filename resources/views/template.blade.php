@@ -78,6 +78,7 @@
     <script src="{{asset('assets\lte/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('assets\lte/dist/js/demo.js')}}"></script>
-     <script src="https://kit.fontawesome.com/2d377ef0a3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2d377ef0a3.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
