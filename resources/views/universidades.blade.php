@@ -55,44 +55,44 @@
                 </div>
             </div>
             <div class="col-8 mt-3">
-                <div class="row pl-2">
+                <div class="container row">
                     <h1>Universidades del Perú</h1>
                 </div><!-- /.col -->
-                <div class="row input-group mb-3">
-                    <div class="input-group-prepend">
-                    </div>
-                    <div class="col-3 text-left">
-                        <a>Buscar</a>
-                        <div>
-                            <input class="form-control form-control-navbar " type="search" placeholder="Search" aria-label="Search" >
+                <form method="POST" action="{{route('filtro')}}"class="form">
+                    @csrf
+                    <div class="row text-left">
+                        <div class="col form-group ml-3">
+                            <label for="buscar">Buscar</label>
+                            <input class="form-control" name="busqueda" type="text" placeholder="Búsqueda" aria-label="Search" >
+                        </div>
+                        <div class="col form-group">
+                            <label for="">Gestión</label>
+                            <select class="form-control" name="gestion" id="">
+                                <option value="0">Público</option>
+                                <option value="1">Privado</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label for="">Orden</label>
+                            <select class="form-control" name="orden" id="">
+                                <option value="asc">Ascendente</option>
+                                <option value="desc">Descendente</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label for="">Cantidad</label>
+                            <select class="form-control" name="cantidad" id="">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <button type="submit" class="btn btn-secondary btn-lg">Aplicar</button>
                         </div>
                     </div>
-                    <div class="col-3 ml-3 ">
-                        <a>Gestion</a>
-                        <div class="btn-group" role="group">
-                            <button id="btnGroupDrop1" type="button" class="btn btn-white dropdown-toggle border border-brown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            privado</button>
-                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                <a class="dropdown-item" href="#">privado</a>
-                                <a class="dropdown-item" href="#">publico</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2 ml-3">
-                        <a>Orden</a>
-                        <div class="btn-group" role="group">
-                            <button id="btnGroupDrop1" type="button" class="btn btn-white dropdown-toggle  border border-brown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Ascendente</button>
-                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                <a class="dropdown-item" href="#">Ascendente</a>
-                                <a class="dropdown-item" href="#">Descendente</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2 mt-2  ml-5">
-                        <button type="button" class="btn btn-secondary btn-sm">Aplicar</button>
-                    </div>
-                </div>
+                </form>
                 <div class="row pl-2">
                     <table class="table">
                         <thead>
@@ -102,18 +102,26 @@
                             <th scope="col">Gestión</th>
                             <th scope="col">Licenciamiento</th>
                             <th scope="col">Periodo</th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($universidades as $uni)
-                                <tr>
-                                <th scope="row">{{$uni->UniCod}}</th>
-                                <td>{{$uni->UniNom}}</td>
-                                <td>{{$uni->UniTipGes == 0 ? 'Publico' : 'Privado'}}</td>
-                                <td>{{$uni->UniEstLic == 1 ? 'Licenciada' : 'No Licenciada'}}</td>
-                                <td>{{$uni->UniPerLic}}</td>
-                                </tr>
-                            @endforeach
+                            @if (!$universidades->isEmpty())
+                                @foreach ($universidades as $uni)
+                                    <tr>
+                                        <th scope="row">{{$uni->UniCod}}</th>
+                                        <td>{{$uni->UniNom}}</td>
+                                        <td>{{$uni->UniTipGes == 0 ? 'Publico' : 'Privado'}}</td>
+                                        <td>{{$uni->UniEstLic == 1 ? 'Licenciada' : 'No Licenciada'}}</td>
+                                        <td>{{$uni->UniPerLic}}</td>
+                                        <td><a href="{{route('universidades/',$uni->UniCod )}}">Detalles</a></td>
+                                    </tr>
+                                @endforeach
+                            @else
+                            <tr>
+                                <td colspan="4"><h3>No se encontró ninguna universidad</h3></td>
+                            </tr>
+                            @endif
                         </tbody>
                       </table>
                 </div>

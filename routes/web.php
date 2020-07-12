@@ -15,12 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','InicioController@index') -> name('ini');
 
+Route::get('/universidades/{uniCod}', 'UniversidadesController@universidad') -> name('universidades/') -> where('uniCod', '[0-9]+');
+
 Route::get('/universidades', 'UniversidadesController@index') -> name('universidades');
 
-Route::get('/universidades/{uniCod}', function($uniCod) {
-    //return view('universidad', ['uni' => Universidad::findOrFail($uniCod)]);
-    return view('universidad', ['uniCod' => $uniCod]);
-}) -> where('uniCod', '[0-9]+');
+Route::post('/universidades', 'UniversidadesController@filtro') -> name('filtro');
 
 Route::get('/departamentos', function () {
   return view('departamentos');
