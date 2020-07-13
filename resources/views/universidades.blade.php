@@ -16,13 +16,11 @@
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <a class="dropdown-item" href="\">Arequipa(2)</a>
-                            <a class="dropdown-item" href="#">Ayacucho(11)</a>
-                            <a class="dropdown-item" href="#">Ica</a>
-                            <a class="dropdown-item" href="#">Moquegua</a>
-                            <a class="dropdown-item" href="#">Tacna</a>
+                    <div id="collapseOne" class="collapse " aria-labelledby="" data-parent="#accordionExample">
+                        <div class="card-body text-left">
+                            @foreach ($departamentos as $departamento)
+                                <a class="dropdown-item" href="#">{{$departamento->DepNom}}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -48,9 +46,7 @@
                         </h2>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
-                        Numero 3
-                        </div>
+                        <div class="card-body">Numero 3</div>
                     </div>
                 </div>
             </div>

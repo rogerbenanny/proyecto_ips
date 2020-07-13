@@ -11,7 +11,8 @@ class UniversidadesController extends Controller
     {
         error_log('INFO: lista Universidades');
         $universidades = App\Universidad::orderBy('UniNom', 'asc')->take(10)->get();
-        return view('universidades', compact('universidades'));
+        $departamentos = App\Departamento::orderBy('DepNom', 'asc')->get();
+        return view('universidades', compact('universidades', 'departamentos'));
     }
 
     public function universidad ($uniCod = null)
@@ -23,7 +24,6 @@ class UniversidadesController extends Controller
 
     public function filtro (Request $request){
         error_log('INFO: filtro Universidades');
-
         if ($request->get('busqueda') != null) {
             $universidades = App\Universidad::where('UniNom', 'like', '%'.strtoupper($request->get('busqueda')).'%', 'and')
                                             ->where('UniTipGes',$request->get('gestion'))
