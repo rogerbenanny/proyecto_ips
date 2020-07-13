@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titulo')
-Universidad
+Programas Académicos
 @endsection
 
 @section('contenido')
