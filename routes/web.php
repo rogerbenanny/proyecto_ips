@@ -29,8 +29,10 @@ Route::get('/estadisticas', function () {
   return view('estadisticas');
 })->name('estadisticas');
 
-Route::get('/programasacademicos', function () {
-  return view('programasacademicos');
-})->name('programasacademicos');
+Route::get('/programasacademicos/{proCod}', 'ProgramasController@programas') -> name('programasacademicos/') -> where('proCod', '[0-9]+');
+Route::get('/programasacademicos', 'ProgramasController@index') -> name('programasacademicos');
+
+Route::post('/programasacademicos', 'ProgramasController@filtro') -> name('filtros');
+
 
 
