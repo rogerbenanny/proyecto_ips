@@ -18,8 +18,13 @@ class UniversidadesController extends Controller
     public function universidad ($uniCod = null)
     {
         error_log('INFO: Información universidad/'.$uniCod);
-        $universidad = App\Universidad::findOrFail($uniCod);
-        return view('universidad', compact('universidad'));
+        $filiales =App\Filiales::all(); 
+        $locales =App\Locales::all(); 
+        $direcciones=App\Direcciones::all();
+        $departamentos=App\Departamentos::all();
+        $localesprogramas=App\LocalesProgramas::all();
+        $programas=App\Programas::all();
+        return view('universidad', compact('universidad','filiales','locales','direcciones','departamentos','localesprogramas','programas'));
     }
 
     public function filtro (Request $request){
