@@ -18,8 +18,8 @@ class ProgramasController extends Controller
         error_log('INFO: Información Programas/'.$proCod);
         $programas = App\Programa::findOrFail($proCod);
         $universidad = App\Universidad::all();
-        $filiales =App\Filiales::all();
-        $locales =App\Locales::all();
+        $filiales =App\Filial::all();
+        $locales =App\Local::all();
         $localesprogramas=App\LocalesProgramas::all();
         return view('programas', compact('programas','filiales','universidad','locales','localesprogramas'));
     }
