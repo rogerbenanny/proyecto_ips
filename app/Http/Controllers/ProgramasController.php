@@ -17,8 +17,11 @@ class ProgramasController extends Controller
     {
         error_log('INFO: Información Programas/'.$proCod);
         $programas = App\Programa::findOrFail($proCod);
-
-        return view('programa', compact('programas'));
+        $universidad = App\Universidad::all();
+        $filiales =App\Filiales::all();
+        $locales =App\Locales::all();
+        $localesprogramas=App\LocalesProgramas::all();
+        return view('programas', compact('programas','filiales','universidad','locales','localesprogramas'));
     }
     public function filtro (Request $request){
         error_log('INFO: filtro Programas');
