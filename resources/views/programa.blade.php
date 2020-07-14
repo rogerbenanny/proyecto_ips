@@ -8,13 +8,13 @@ Universidad
 <div class="main-header mt-3  ">
     <a href="\" class="h5 text-info ml-5" style="background-color:white">Inicio</a>
     <a>></a>
-    <a href="{{route('universidades')}}" class="h5 text-info" style="background-color:white">Universidades</a>
+    <a href="{{route('universidades')}}" class="h5 text-info" style="background-color:white">Programa Academico</a>
     <a>></a>
-    <a  class="h5 text-dark" >{{$universidad->UniNom}}</a>
+    <a  class="h5 text-dark" >{{$programas->ProNom}}</a>
 </div>
 <div class="container mt-4 ">
   <div class="col-6 text-left ">
-    <a  class="h4 text-dark " style="background-color:white">{{$universidad->UniNom}}</a>
+    <a  class="h4 text-dark " style="background-color:white">{{$programas->ProNom}}</a>
   </div>
   <div class="col-6 mt-4">
         @php
@@ -23,20 +23,19 @@ Universidad
           $direccion=array();
           $depart=array();
           $locpro=array();
-          $program=array();
         @endphp
 
-         @foreach ($filiales as $fil)
-             @if($fil->UniCod==$universidad->UniCod)
+         @foreach ($localesprogramas as $lp)
+             @if($lp->ProCod==$programas->ProCod)
              @php
-                array_push($filial,$fil)
+                array_push($locpro,$lp)
               @endphp
 
             @endif
           @endforeach
-          @foreach($filial as $f)
+          @foreach($locpro as $lpro)
             @foreach ($locales as $loc)
-                @if($f->FilCod==$loc->FilCod)
+                @if($lpro->LocCod==$loc->LocCod)
                  @php
                    array_push($local,$loc)
                  @endphp
@@ -45,10 +44,10 @@ Universidad
               @endforeach
            @endforeach
            @foreach($local as $l)
-            @foreach ($direcciones as $dir)
-                @if($l->LocDirCod==$dir->DirCod)
+            @foreach ($filiales as $f)
+                @if($l->FilCod==$f->FilCod)
                   @php
-                    array_push($direccion,$dir)
+                    array_push($filial,f)
                   @endphp
                   @break;
                 @endif
@@ -148,7 +147,7 @@ Universidad
             <tr>
                  @foreach ($program as $p)
                    <tr>
-                        <td><a class="h6 text-dark text-center" >{{$p->ProNom}}</a></td>
+                        <td>{{$p->ProNom}}</td>
                    </tr>
                @endforeach
            </tr>

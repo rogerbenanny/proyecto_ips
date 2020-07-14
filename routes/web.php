@@ -17,6 +17,7 @@ Route::get('/','InicioController@index') -> name('ini');
 
 Route::get('/universidades/{uniCod}', 'UniversidadesController@universidad') -> name('universidades/') -> where('uniCod', '[0-9]+');
 
+
 Route::get('/universidades', 'UniversidadesController@index') -> name('universidades');
 
 Route::post('/universidades', 'UniversidadesController@filtro') -> name('filtro');
@@ -29,8 +30,8 @@ Route::get('/estadisticas', function () {
   return view('estadisticas');
 })->name('estadisticas');
 
-Route::get('/programasacademicos', function () {
-  return view('programasacademicos');
-})->name('programasacademicos');
 
+Route::get('/programasacademicos/{proCod}', 'ProgramasController@programas') -> name('programasacademicos/') -> where('proCod', '[0-9]+');
+Route::get('/programasacademicos', 'ProgramasController@index') -> name('programasacademicos');
 
+Route::post('/programasacademicos', 'ProgramasController@filtro') -> name('filtroprograma');
