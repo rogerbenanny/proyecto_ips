@@ -13,26 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','InicioController@index') -> name('ini');
-
+Route::get('/','InicioController@index');
+//Route::get('/', function () {
+  //  return view('welcome');
+//});
+//Route::view('biblioteca','welcome');
+Route::get('nota', 'notaController@index');
+//Route::view('nota','nota');
+//Route::get('universidad/index','UniversidadController@index');
+//Route::get('universidad/index','UniversidadController@index');
+//Route::get('universidad/index{uniCod}', 'UniversidadController@universidad') -> name('universidades/') -> where('uniCod', '[0-9]+');
+//Route::get('universidad/index', 'UniversidadController@index') -> name('universidades');
+//Route::post('universidad/index', 'UniversidadController@filtro') -> name('filtro');
 Route::get('/universidades/{uniCod}', 'UniversidadesController@universidad') -> name('universidades/') -> where('uniCod', '[0-9]+');
 
 Route::get('/universidades', 'UniversidadesController@index') -> name('universidades');
 
 Route::post('/universidades', 'UniversidadesController@filtro') -> name('filtro');
-
 Route::get('/departamentos', function () {
-  return view('departamentos');
-})->name('departamentos');
+    return view('departamentos');
+  })->name('departamentos');
 
-Route::get('/estadisticas', function () {
-  return view('estadisticas');
-})->name('estadisticas');
+  Route::get('/estadisticas', function () {
+    return view('estadisticas');
+  })->name('estadisticas');
 
-Route::get('/programasacademicos/{proCod}', 'ProgramasController@programas') -> name('programasacademicos/') -> where('proCod', '[0-9]+');
-Route::get('/programasacademicos', 'ProgramasController@index') -> name('programasacademicos');
-
-Route::post('/programasacademicos', 'ProgramasController@filtro') -> name('filtros');
-
-
-
+Route::get('Programas/index/{uniCod}', 'ProgramasController@programa') -> name('programa/') -> where('uniCod', '[0-9]+');
+Route::get('Programas/index', 'ProgramasController@index') -> name('programas');
+Route::post('Programas/index', 'ProgramasController@filtro') -> name('filtro1');
