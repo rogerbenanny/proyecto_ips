@@ -26,11 +26,13 @@ Route::get('nota', 'notaController@index');
 //Route::get('universidad/index', 'UniversidadController@index') -> name('universidades');
 //Route::post('universidad/index', 'UniversidadController@filtro') -> name('filtro');
 Route::get('/universidades/{uniCod}', 'UniversidadesController@universidad') -> name('universidades/') -> where('uniCod', '[0-9]+');
+Route::get('/universidades/locales/{locCod}', 'UniversidadesController@locales') -> name('universidades/locales') -> where('uniCod', '[0-9]+');
 
 Route::get('/universidades', 'UniversidadesController@index') -> name('universidades');
 
 Route::post('/universidades', 'UniversidadesController@filtro') -> name('filtro');
 Route::get('/departamentos', function () {
+<<<<<<< HEAD
     return view('departamentos');
   })->name('departamentos');
 
@@ -41,3 +43,17 @@ Route::get('/departamentos', function () {
 Route::get('Programas/index/{uniCod}', 'ProgramasController@programa') -> name('programa/') -> where('uniCod', '[0-9]+');
 Route::get('Programas/index', 'ProgramasController@index') -> name('programas');
 Route::post('Programas/index', 'ProgramasController@filtro') -> name('filtro1');
+=======
+  return view('departamentos');
+})->name('departamentos');
+
+Route::get('/estadisticas', function () {
+  return view('estadisticas');
+})->name('estadisticas');
+
+
+Route::get('/programasacademicos/{proCod}', 'ProgramasController@programas') -> name('programasacademicos/') -> where('proCod', '[0-9]+');
+Route::get('/programasacademicos', 'ProgramasController@index') -> name('programasacademicos');
+
+Route::post('/programasacademicos', 'ProgramasController@filtro') -> name('filtroprograma');
+>>>>>>> feature-will

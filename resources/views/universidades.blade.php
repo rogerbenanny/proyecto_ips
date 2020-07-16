@@ -5,6 +5,7 @@
 @endsection
 
 @section('contenido')
+<<<<<<< HEAD
     <div class="container-fluid main-header text-center">
         <div class="row">
             <div class="accordion ml-3 mt-5" id="accordionExample">
@@ -52,6 +53,17 @@
             </div>
             <div class="col-8 mt-3">
                 <div class="container row">
+=======
+    <div class="main-header mt-3  ">
+        <a href="\" class="h5 text-info ml-5">Inicio</a>
+        <a>></a>
+        <a href="{{route('universidades')}}" class="h5 text-info">Universidades</a>
+    </div>
+  
+        <div class="row justify-content-center mt-4 main-header">
+            <div class="col-9 pl-5 mt-3">
+                <div class="container text-center">
+>>>>>>> feature-will
                     <h1>Universidades del Perú</h1>
                 </div><!-- /.col -->
                 <form method="POST" action="{{route('filtro')}}"class="form">
@@ -66,6 +78,7 @@
                             <select class="form-control" name="gestion" id="">
                                 <option value="0">Público</option>
                                 <option value="1">Privado</option>
+
                             </select>
                         </div>
                         <div class="col form-group">
@@ -82,36 +95,31 @@
                                 <option value="20">20</option>
                                 <option value="50">50</option>
                                 <option value="100">100</option>
+                                <option value="100">100</option>
                             </select>
                         </div>
-                        <div class="col form-group">
-                            <button type="submit" class="btn btn-secondary btn-lg">Aplicar</button>
+                        <div class="col form-group mt-4">
+                            <button type="submit" class="btn btn-secondary btn-lg" style="">Aplicar</button>
                         </div>
                     </div>
                 </form>
                 <div class="row pl-2">
-                    <table class="table">
-                        <thead>
+                    <table class="table table-striped pl-2">
+                        <thead class="thead-dark">
                           <tr>
-                            <th scope="col">Código</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Gestión</th>
-                            <th scope="col">Licenciamiento</th>
-                            <th scope="col">Periodo</th>
+                            <th class="border border-dark"  scope="col">Nombre</th>                        
+                            <th class="border border-dark" >Gestion</th>
                             <th></th>
                           </tr>
                         </thead>
                         <tbody>
                             @if (!$universidades->isEmpty())
                                 @foreach ($universidades as $uni)
-                                    <tr>
-                                        <th scope="row">{{$uni->UniCod}}</th>
+                                <tr>    
                                         <td>{{$uni->UniNom}}</td>
                                         <td>{{$uni->UniTipGes == 0 ? 'Publico' : 'Privado'}}</td>
-                                        <td>{{$uni->UniEstLic == 1 ? 'Licenciada' : 'No Licenciada'}}</td>
-                                        <td>{{$uni->UniPerLic}}</td>
                                         <td><a href="{{route('universidades/',$uni->UniCod )}}">Detalles</a></td>
-                                    </tr>
+                                </tr>
                                 @endforeach
                             @else
                             <tr>
@@ -121,7 +129,8 @@
                         </tbody>
                       </table>
                 </div>
+                {{$universidades->links()}}
             </div>
         </div>
-    </div>
+   
 @endsection
