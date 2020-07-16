@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','InicioController@index') -> name('ini');
 
 Route::get('/universidades/{uniCod}', 'UniversidadesController@universidad') -> name('universidades/') -> where('uniCod', '[0-9]+');
-
+Route::get('/universidades/locales/{locCod}', 'UniversidadesController@locales') -> name('universidades/locales') -> where('uniCod', '[0-9]+');
 
 Route::get('/universidades', 'UniversidadesController@index') -> name('universidades');
 

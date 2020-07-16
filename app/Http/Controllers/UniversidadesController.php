@@ -10,7 +10,7 @@ class UniversidadesController extends Controller
     public function index()
     {
         error_log('INFO: lista Universidades');
-        $universidades = App\Universidad::orderBy('UniNom', 'asc')->take(10)->get();
+        $universidades = App\Universidad::orderBy('UniNom', 'asc')->paginate(10);
        
         return view('universidades', compact('universidades'));
     }
@@ -25,6 +25,15 @@ class UniversidadesController extends Controller
         $localesprogramas=App\LocalesProgramas::all();
         $programas=App\Programas::all();
         return view('universidad', compact('universidad','filiales','locales','direcciones','departamentos','localesprogramas','programas'));
+    }
+    public function locales ($locCod = null)
+    {
+        error_log('INFO: Información de locales Programas/'.$locCod);
+        $local = App\Locales::findOrFail($locCod);
+        $filiales=App\Filiales::all();
+        $localesprogramas=App\LocalesProgramas::all();
+        $programas=App\Programas::all();
+        return view('local', compact('local','localesprogramas','programas','filiales'));
     }
     public function filtro (Request $request){
         error_log('INFO: filtro Universidades');

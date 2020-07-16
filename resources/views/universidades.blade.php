@@ -6,59 +6,12 @@
 
 @section('contenido')
     <div class="main-header mt-3  ">
-        <a href="\" class="h5 text-info ml-5" style="background-color:white">Inicio</a>
+        <a href="\" class="h5 text-info ml-5">Inicio</a>
         <a>></a>
-        <a href="{{route('universidades')}}" class="h5 text-info" style="background-color:white">Universidades</a>
+        <a href="{{route('universidades')}}" class="h5 text-info">Universidades</a>
     </div>
-    <div class="container-fluid main-header text-center">
-        <div class="row">
-            <div class="col-2 accordion ml-3 mt-5" id="accordionExample">
-                <div class="card">
-                    <div class="" id="headingOne">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            <a class="font-weight-bold text-dark">Departamento</a>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <a class="dropdown-item" href="\">Arequipa(2)</a>
-                            <a class="dropdown-item" href="#">Ayacucho(11)</a>
-                            <a class="dropdown-item" href="#">Ica</a>
-                            <a class="dropdown-item" href="#">Moquegua</a>
-                            <a class="dropdown-item" href="#">Tacna</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left text-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <a class="font-weight-bold text-dark">Nivel Académico</a>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="" id="headingThree">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <a class="font-weight-bold text-dark">Años de Licenciamiento</a>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
-                        Numero 3
-                        </div>
-                    </div>
-                </div>
-            </div>
+  
+        <div class="row justify-content-center mt-4 main-header">
             <div class="col-9 pl-5 mt-3">
                 <div class="container text-center">
                     <h1>Universidades del Perú</h1>
@@ -92,6 +45,7 @@
                                 <option value="20">20</option>
                                 <option value="50">50</option>
                                 <option value="100">100</option>
+                                <option value="100">100</option>
                             </select>
                         </div>
                         <div class="col form-group mt-4">
@@ -104,15 +58,16 @@
                         <thead class="thead-dark">
                           <tr>
                             <th class="border border-dark"  scope="col">Nombre</th>                        
-                            <th class="border border-dark" ></th>
+                            <th class="border border-dark" >Gestion</th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
                             @if (!$universidades->isEmpty())
                                 @foreach ($universidades as $uni)
-                                <tr>
-                                       
+                                <tr>    
                                         <td>{{$uni->UniNom}}</td>
+                                        <td>{{$uni->UniTipGes == 0 ? 'Publico' : 'Privado'}}</td>
                                         <td><a href="{{route('universidades/',$uni->UniCod )}}">Detalles</a></td>
                                 </tr>
                                 @endforeach
@@ -124,7 +79,8 @@
                         </tbody>
                       </table>
                 </div>
+                {{$universidades->links()}}
             </div>
         </div>
-    </div>
+   
 @endsection
