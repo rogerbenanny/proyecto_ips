@@ -74,7 +74,7 @@
                             <div class="icon">
                                <i class="text-center far fa-list-alt"></i>>
                             </div>
-                            <a href="{{route('programasacademicos')}}" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="Programas/index" class="small-box-footer">Acceder <i class="fas fa-arrow-circle-right"></i></a>
                           </div>
                         </div>
                         <div class="col-lg-2"></div>
