@@ -42,13 +42,13 @@ class UniversidadesController extends Controller
                                             ->where('UniTipGes',$request->get('gestion'))
                                             ->orderBy('UniNom',$request->get('orden'))
                                             ->take($request->get('cantidad'))
-                                            ->get();
+                                            ->paginate(10);
         }
         else{
             $universidades = App\Universidad::where('UniTipGes',$request->get('gestion'))
                                             ->orderBy('UniNom',$request->get('orden'))
                                             ->take($request->get('cantidad'))
-                                            ->get();
+                                            ->paginate(10);
         }
         return view('universidades', compact('universidades'));
     }

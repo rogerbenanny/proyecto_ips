@@ -20,10 +20,12 @@
                         <input class="form-control" name="busqueda" type="text" placeholder="Búsqueda" aria-label="Search" >
                     </div>
                     <div class="col form-group">
-                        <label for="">Gestión</label>
-                        <select class="form-control" name="gestion" id="">
-                            <option value="0">Público</option>
-                            <option value="1">Privado</option>
+                        <label for="">Nivel Académico</label>
+                        <select class="form-control" name="nivel" id="">
+                            <option value="0">Carrera Profesional</option>
+                            <option value="1">Maestría</option>
+                            <option value="2">Doctorado</option>
+                            <option value="3">2da Especialidad</option>
                         </select>
                     </div>
                     <div class="col form-group">
@@ -36,7 +38,6 @@
                     <div class="col form-group">
                         <label for="">Cantidad</label>
                         <select class="form-control" name="cantidad" id="">
-                            <option value="7000">7000</option>
                             <option value="10">10</option>
                             <option value="20">20</option>
                             <option value="50">50</option>
@@ -63,8 +64,8 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @if (!$universidades->isEmpty())
-                            @foreach ($universidades as $uni)
+                        @if (!$programas->isEmpty())
+                            @foreach ($programas as $uni)
                                 <tr>
                                     <td text-left>{{$uni->ProNom}}</td>
                                     <td>@if($uni->ProNivAca==0)
@@ -96,7 +97,7 @@
                   </table>
 
             </div>
-            {{$universidades->links()}}
+            {{$programas->links()}}
         </div>
     </div>
 </div>

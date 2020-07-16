@@ -20,7 +20,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('programas')}}" class="nav-link">
+            <a href="{{route('programasacademicos')}}" class="nav-link">
               <i class="far fa-list-alt"></i>
               <p>
                 Programas Academicos
