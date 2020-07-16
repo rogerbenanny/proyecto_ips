@@ -13,13 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','InicioController@index');
-//Route::get('/', function () {
-  //  return view('welcome');
-//});
-//Route::view('biblioteca','welcome');
-Route::get('nota', 'notaController@index');
-//Route::view('nota','nota');
+Route::get('/','InicioController@index')->name('ini');
+
 //Route::get('universidad/index','UniversidadController@index');
 //Route::get('universidad/index','UniversidadController@index');
 //Route::get('universidad/index{uniCod}', 'UniversidadController@universidad') -> name('universidades/') -> where('uniCod', '[0-9]+');
@@ -31,21 +26,15 @@ Route::get('/universidades/locales/{locCod}', 'UniversidadesController@locales')
 Route::get('/universidades', 'UniversidadesController@index') -> name('universidades');
 
 Route::post('/universidades', 'UniversidadesController@filtro') -> name('filtro');
-Route::get('/departamentos', function () {
-<<<<<<< HEAD
-    return view('departamentos');
-  })->name('departamentos');
 
-  Route::get('/estadisticas', function () {
-    return view('estadisticas');
-  })->name('estadisticas');
+Route::get('/departamentos', function () {
+    return view('departamentos');
+})->name('departamentos');
+
 
 Route::get('Programas/index/{uniCod}', 'ProgramasController@programa') -> name('programa/') -> where('uniCod', '[0-9]+');
 Route::get('Programas/index', 'ProgramasController@index') -> name('programas');
 Route::post('Programas/index', 'ProgramasController@filtro') -> name('filtro1');
-=======
-  return view('departamentos');
-})->name('departamentos');
 
 Route::get('/estadisticas', function () {
   return view('estadisticas');
@@ -56,4 +45,3 @@ Route::get('/programasacademicos/{proCod}', 'ProgramasController@programas') -> 
 Route::get('/programasacademicos', 'ProgramasController@index') -> name('programasacademicos');
 
 Route::post('/programasacademicos', 'ProgramasController@filtro') -> name('filtroprograma');
->>>>>>> feature-will

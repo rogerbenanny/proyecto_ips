@@ -32,7 +32,7 @@
             <!--Fin header-->
 
             <!--Inicio aside-->
-            @include("theme.$theme.aside1")
+            @include("theme.$theme.aside")
             <!--Fin aside-->
 
 

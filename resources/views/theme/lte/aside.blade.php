@@ -1,5 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -9,7 +12,7 @@
 
           <li class="nav-header">PROGRAMAS ACADEMICOS PERU</li>
           <li class="nav-item">
-            <a href="../gallery.html" class="nav-link">
+            <a href="{{route('universidades')}}" class="nav-link">
               <i class="fas fa-university"></i>
               <p>
                 Universidades
@@ -17,7 +20,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../gallery.html" class="nav-link">
+            <a href="{{route('programas')}}" class="nav-link">
               <i class="far fa-list-alt"></i>
               <p>
                 Programas Academicos
@@ -25,7 +28,7 @@
             </a>
             </li>
             <li class="nav-item">
-                <a href="../calendar.html" class="nav-link">
+                <a href="{{route('departamentos')}}" class="nav-link">
                   <i class="fas fa-globe-americas"></i>
                   <p>
                     Departamentos
@@ -33,7 +36,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../calendar.html" class="nav-link">
+                <a href="{{route('estadisticas')}}" class="nav-link">
                   <i class="fas fa-chart-bar"></i>
                   <p>
                     Estadisticas
@@ -46,3 +49,4 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+

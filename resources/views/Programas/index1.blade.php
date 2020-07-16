@@ -166,10 +166,9 @@
                                         </thead>
                                         <tbody>
                                                 @foreach ($a as $p)
-
                                                   <tr>
                                                        <td>{{$p->UniNom}}</td>
-                                                       <td><button type="button" class="btn btn-block btn-success btn-sm">Ir</button></td>
+                                                       <td><a href="{{route('universidades/',$p->UniCod )}}" type="button" class="btn btn-block btn-success btn-sm">Ir</a></td>
                                                   </tr>
                                                 @endforeach
 
@@ -199,6 +198,6 @@
 
 
   </div>
-  
+
 @endsection
 

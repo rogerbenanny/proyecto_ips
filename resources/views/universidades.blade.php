@@ -5,65 +5,15 @@
 @endsection
 
 @section('contenido')
-<<<<<<< HEAD
-    <div class="container-fluid main-header text-center">
-        <div class="row">
-            <div class="accordion ml-3 mt-5" id="accordionExample">
-                <div class="card">
-                    <div class="" id="headingOne">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            <a class="font-weight-bold text-dark">Departamento</a>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse " aria-labelledby="" data-parent="#accordionExample">
-                        <div class="card-body text-left">
-                            @foreach ($departamentos as $departamento)
-                                <a class="dropdown-item" href="#">{{$departamento->DepNom}}</a>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left text-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <a class="font-weight-bold text-dark">Nivel Académico</a>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="" id="headingThree">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <a class="font-weight-bold text-dark">Años de Licenciamiento</a>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">Numero 3</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-8 mt-3">
-                <div class="container row">
-=======
     <div class="main-header mt-3  ">
         <a href="\" class="h5 text-info ml-5">Inicio</a>
         <a>></a>
         <a href="{{route('universidades')}}" class="h5 text-info">Universidades</a>
     </div>
-  
+
         <div class="row justify-content-center mt-4 main-header">
             <div class="col-9 pl-5 mt-3">
                 <div class="container text-center">
->>>>>>> feature-will
                     <h1>Universidades del Perú</h1>
                 </div><!-- /.col -->
                 <form method="POST" action="{{route('filtro')}}"class="form">
@@ -107,7 +57,7 @@
                     <table class="table table-striped pl-2">
                         <thead class="thead-dark">
                           <tr>
-                            <th class="border border-dark"  scope="col">Nombre</th>                        
+                            <th class="border border-dark"  scope="col">Nombre</th>
                             <th class="border border-dark" >Gestion</th>
                             <th></th>
                           </tr>
@@ -115,7 +65,7 @@
                         <tbody>
                             @if (!$universidades->isEmpty())
                                 @foreach ($universidades as $uni)
-                                <tr>    
+                                <tr>
                                         <td>{{$uni->UniNom}}</td>
                                         <td>{{$uni->UniTipGes == 0 ? 'Publico' : 'Privado'}}</td>
                                         <td><a href="{{route('universidades/',$uni->UniCod )}}">Detalles</a></td>
@@ -132,5 +82,5 @@
                 {{$universidades->links()}}
             </div>
         </div>
-   
+
 @endsection
