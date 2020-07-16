@@ -6,9 +6,9 @@
 
 
 <div class="container-fluid main-header text-center">
-    <div class="row">
+    <div class="row justify-content-center">
 
-        <div class="col-8 mt-3">
+        <div class="col-8 mt-3 text-center">
             <div class="container row text-center">
                 <h1 class="text-center">Programas Academicos Peru</h1>
             </div><!-- /.col -->
