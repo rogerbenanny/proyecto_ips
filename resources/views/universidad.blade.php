@@ -188,6 +188,5 @@ Universidad
 </table>
     
   </div>
-  {{$local->links()}}
 </div>
 @endsection
