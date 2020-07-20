@@ -11,7 +11,7 @@ Route::post('/universidades', 'UniversidadesController@filtro') -> name('filtro'
 
 Route::get('/departamentos', function () { return view('departamentos'); })->name('departamentos');
 
-
+Route::get('/index', function () { return view('index'); })->name('index');
 Route::get('Programas/index/{uniCod}', 'ProgramasController@programas') -> name('programa/') -> where('uniCod', '[0-9]+');
 Route::get('Programas/index', 'ProgramasController@index')->name('programasacademicos');
 Route::post('Programas/index', 'ProgramasController@filtro') -> name('filtro1');

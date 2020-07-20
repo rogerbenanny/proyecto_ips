@@ -8,7 +8,7 @@
 <div class="main-header mt-3 ">
     <a href="\" class="h5 text-info ml-5">Inicio</a>
     <a>></a>
-    <a href="{{route('programasacademicos')}}" class="h5 text-dark" style="background-color:white">Programas Académicos</a>
+    <a href="{{route('programasacademicos')}}" class="h5 text-dark">Programas Académicos</a>
 
 </div>
 <div class="row justify-content-center main-header">

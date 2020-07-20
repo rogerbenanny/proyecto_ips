@@ -1,17 +1,18 @@
-@extends('template')
+@extends("theme.$theme.layout1")
 
 @section('titulo')
     Universidades
 @endsection
 
 @section('contenido')
-    <div class="main-header mt-3  ">
-        <a href="\" class="h5 text-info ml-5">Inicio</a>
+<div class="content-wrapper">
+    <div class="main-header ">
+        <a href="\" class="h5 text-info ">Inicio</a>
         <a>></a>
         <a href="{{route('universidades')}}" class="h5 text-info">Universidades</a>
     </div>
 
-        <div class="row justify-content-center mt-4 main-header">
+        <div class="row justify-content-center main-header">
             <div class="col-9 pl-5 mt-3">
                 <div class="container text-center">
                     <h1>Universidades del Perú</h1>
@@ -82,5 +83,5 @@
                 {{$universidades->links()}}
             </div>
         </div>
-
+</div>
 @endsection
