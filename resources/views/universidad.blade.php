@@ -4,21 +4,25 @@
 Universidad
 @endsection
 
+
 @section('contenido')
+
 <div class="content-wrapper">
-  <div class="main-header"> 
+<!--<div class="main-header">
       <a href="{{route('ini')}}" class="h5 text-info">Inicio</a>
       <a class="h5 text-dark">></a>
       <a href="{{route('universidades')}}" class="h5 text-info">Universidades</a>
       <a class="h5 text-dark">></a>
       <a  class="h5 text-dark" >{{$universidad->UniNom}} </a>
-  </div>
-  <div class="container mt-4 ">
+  </div>-->
+  <div class="container-fluid ">
     <div class="text-center ">
-      <a  class="h4 text-dark ">{{$universidad->UniNom}}</a>
+      <!--<a  class="h4 text-dark ">{{$universidad->UniNom}}</a>-->
   </div>
-  <div class="row mt-4">
-    <div class="col-6 content-fluid">
+  </div>
+
+
+   <!--<div class="col-6 content-fluid">
     @php
     $filial=array();
     $local=array();
@@ -26,6 +30,10 @@ Universidad
     $locpro=array();
     $direccion=array();
     $program=array();
+    $profe=array();
+    $segunda=array();
+    $maestria=array();
+    $docto=array();
     $pre=0;
     $post=0;
     $cf=1;
@@ -165,7 +173,7 @@ Universidad
               @endif
 
             @endforeach
-     
+
             <td class="justify-content-right">
             @foreach ($local as $l)
               @if ($f->FilCod==$l->FilCod)
@@ -188,8 +196,9 @@ Universidad
     @endforeach
   </table>
 
-  </div>
- 
+  </div>-->
+
+
       @php
       $carrera=array();
       $maestria=array();
@@ -218,13 +227,32 @@ Universidad
                 @php
                 array_push($segunda,$p)
                 @endphp
-                @break 
-            @default    
-        @endswitch  
+                @break
+            @default
+        @endswitch
       @endforeach
-    <div class="row ml-auto mt-4 ">
+      @foreach ($program as $p)
+        @if ($p->ProNivAca == 0)
+                @php
+                array_push($profe,$p)
+                @endphp
+                    @elseif($p->ProNivAca == 1)
+                    @php
+                    array_push($maestria,$p)
+                    @endphp
+                        @elseif($p->ProNivAca == 2)
+                        @php
+                        array_push($docto,$p)
+                        @endphp
+                            @elseif($p->ProNivAca == 3)
+                            @php
+                            array_push($segunda,$p)
+                            @endphp
+                @endif
+        @endforeach
+    <!--<div class="row ml-auto mt-4 ">
     <div class="border border-dark rounded" id="barras" style="width: 550px; height: 400px"></div>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script>
     google.load("visualization", "1", {packages:["corechart"]});
     google.setOnLoadCallback(dibujarGrafico);
@@ -241,14 +269,191 @@ Universidad
         title: 'Total   de programas académicos'
       }
       // Dibujar el gráfico
-      new google.visualization.ColumnChart( 
+      new google.visualization.ColumnChart(
       //ColumnChart sería el tipo de gráfico a dibujar
         document.getElementById('barras')
       ).draw(data, options);
     }
-    </script>   
+    </script>
+    </div>-->
+
+
+    <!-- contenido 2-->
+<div class="content-fluid">
+    <!-- Content Header (Page header) -->
+    <div class="content-fluid">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <a></a>
+            <br>
+            <h3 class="text-dark text-center">{{$universidad->UniNom}}</h3>
+            <br>
+            <a></a>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
-   
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-header bg-info border-0">
+                <div class="d-flex justify-content-between">
+                  <h3 class="h5 card-title">Contenido</h3>
+                </div>
+              </div>
+              <div class="card-body">
+
+
+
+                    <a class="h6 text-dark text-left" >Universidad Licenciada</a><br>
+                    <a class="h6 text-dark text-left" >Años de Licenciamiento: {{$universidad->UniPerLic}}</a><br>
+
+                    <a class="h6 text-dark text-left" >Programas Academicos: {{count($program)}}</a><br>
+                    <a class="h6 text-dark text-left">PostGrado: {{$post}}</a><br>
+
+
+                    <a class="h6 text-dark text-left">Pregrado: {{$pre}}</a>
+
+
+
+
+
+              </div>
+            </div>
+            <!-- /.card -->
+            <div class="card">
+                <div class="card-header bg-info border-0">
+                  <div class="d-flex justify-content-between">
+                    <h3 class="h5 card-title">Grafico Estadistico Programas Academicos   </h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart">
+                      <canvas id="myChart" style="min-height: 250px; height: 150px; max-height: 150   px; max-width: 100%;"></canvas>
+                    </div>
+
+                </div>
+              </div>
+
+
+            <!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header bg-info">
+                <div class="d-flex justify-content-between">
+                  <h3 class="h5 card-title">Filiales</h3>
+                </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table class="table table-bordered">
+
+                    @foreach($filial as $f)
+                    @php
+                        $cf=1;
+                    @endphp
+
+
+                        <thead class="thead-dark">
+                            <tr  class="text-center">
+                                <th colspan="2"  class="border border-dark"  scope="col">Filial: {{$f->FilNom}}</th>
+                            </tr>
+
+                        </thead>
+
+                    <tbody>
+                        <tr>
+                            @foreach($direccion as $d)
+                                @if($f->DirCod==$d->DirCod)
+                                @foreach($depart as $dp)
+                                    @if($d->DepCod==$dp->DepCod)
+
+                                    <td >
+                                    <a  class=" text-dark text-left" >Gestion: {{$universidad->UniTipGes == 0 ? 'Publico' : 'Privado'}}</a>
+                                    <br>
+                                    <a  class="text-dark text-left" >Departamento: {{$dp->DepNom}}</a>
+                                    <br>
+                                    <a  class=" text-dark text-left" >Provincia: {{$d->DirProNom}}</a>
+                                    <br>
+                                    </td>
+
+                                    @endif
+
+                                @endforeach
+                                @endif
+
+                            @endforeach
+
+                            <td >
+                            @foreach ($local as $l)
+                                @if ($f->FilCod==$l->FilCod)
+
+
+                                <a href="{{route('universidades/locales',$l->LocCod )}}" class="text-dark text-left" >Local {{$cf}}:</a>
+                                <br>
+                                <a  class=" text-dark text-left" >Distrito: {{$l->LocDis}}</a>
+                                <br>
+
+
+                            @php
+                                $cf+=1;
+                            @endphp
+                            @endif
+                            @endforeach
+                            </td>
+                            </tr>
+                        </tbody>
+                    @endforeach
+                    </table>
+
+
+
+                </div>
+                <!-- /.card-body -->
+              </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+<!--fin contenido 2-->
 </div>
- 
+</div>
+
+
 @endsection
+
+@section('script')
+<canvas id="myChart"></canvas>
+    <script src="chart.js"></script>
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Carrera Profesional', 'Maestria', 'Doctorado', 'Segunda Carrera'],
+        datasets: [{
+            label: 'Nivel Academico',
+            backgroundColor: ['#900d0d', '#50B432', '#9D561B', '#DDDF00', '#24CBE5'],
+            borderColor: "rgba(0, 158, 219, 1)",
+            borderWidth: "2",
+            data: [{{ count($profe) }}, {{ count($maestria) }}, {{ count($docto) }}, {{ count($segunda) }},0]
+        }
+		]},
+    options: {responsive: true}
+    });
+    </script>
+    @endsection
+

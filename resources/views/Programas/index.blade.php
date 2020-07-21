@@ -2,6 +2,7 @@
 @section('titulo')
     Programas Academicos
 @endsection
+
 @section('contenido')
 
 
@@ -102,3 +103,4 @@
     </div>
 </div>
 @endsection
+

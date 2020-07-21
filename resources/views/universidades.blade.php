@@ -50,7 +50,7 @@
                             </select>
                         </div>
                         <div class="col form-group mt-4">
-                            <button type="submit" class="btn btn-secondary btn-lg" style="">Aplicar</button>
+                            <button type="submit" class="btn btn-info btn-lg" style="">Aplicar</button>
                         </div>
                     </div>
                 </form>
@@ -69,7 +69,8 @@
                                 <tr>
                                         <td>{{$uni->UniNom}}</td>
                                         <td>{{$uni->UniTipGes == 0 ? 'Publico' : 'Privado'}}</td>
-                                        <td><a href="{{route('universidades/',$uni->UniCod )}}">Detalles</a></td>
+                                        <td><button type="button" class="btn btn-block btn-info btn-sm"><a href="{{route('universidades/',$uni->UniCod )}}" style="color:white";>Detalles</button></td>
+
                                 </tr>
                                 @endforeach
                             @else

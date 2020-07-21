@@ -22,31 +22,22 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
-
     <body class="hold-transition sidebar-mini sidebar-collapse">
         <!-- Site wrapper -->
         <div class="wrapper">
-
             <!--Inicio header-->
             @include("theme.$theme.header1")
             <!--Fin header-->
-
             <!--Inicio aside-->
             @include("theme.$theme.aside")
             <!--Fin aside-->
 
-
-
-                    <section class="content bg-light">
                         @yield('contenido')
-                    </section>
-
 
             <!--Inicio footer-->
             <!--@include('theme/lte/footer')-->
             <!--Fin footer-->
         </div>
-
         <script src="{{asset("assets/$theme/plugins/jquery/jquery.min.js")}}"></script>
         <!-- Bootstrap 4 -->
         <script src="{{asset("assets/$theme/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
@@ -57,6 +48,9 @@
         <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="{{asset("assets/$theme/dist/js/demo.js")}}"></script>
+        <!-- ChartJS -->
+        <script src="{{asset('assets/lte/plugins/chart.js/Chart.min.js')}}"></script>
+
         <script src="{{asset("assets/$theme/plugins/datatables/jquery.dataTables.min.js")}}"></script>
         <script src="{{asset("assets/$theme/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
         <script src="{{asset("assets/$theme/plugins/datatables-responsive/js/dataTables.responsive.min.js")}}"></script>
@@ -67,8 +61,6 @@
               $("#example1").DataTable({
                 "responsive": true,
                 "autoWidth": true,
-
-
               });
               $('#example2').DataTable({
                 "paging": true,
@@ -80,6 +72,9 @@
                 "responsive": true,
               });
             });
+          </script>
+          <script>
+          @yield('script')
           </script>
     </body>
 </html>
