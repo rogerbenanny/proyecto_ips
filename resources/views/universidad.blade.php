@@ -31,8 +31,8 @@ Universidad
     $direccion=array();
     $program=array();
     $profe=array();
-    $segunda=array();
-    $maestria=array();
+    $segundaa=array();
+    $maestriaa=array();
     $docto=array();
     $pre=0;
     $post=0;
@@ -238,7 +238,7 @@ Universidad
                 @endphp
                     @elseif($p->ProNivAca == 1)
                     @php
-                    array_push($maestria,$p)
+                    array_push($maestriaa,$p)
                     @endphp
                         @elseif($p->ProNivAca == 2)
                         @php
@@ -246,7 +246,7 @@ Universidad
                         @endphp
                             @elseif($p->ProNivAca == 3)
                             @php
-                            array_push($segunda,$p)
+                            array_push($segundaa,$p)
                             @endphp
                 @endif
         @endforeach
@@ -449,7 +449,7 @@ Universidad
             backgroundColor: ['#900d0d', '#50B432', '#9D561B', '#DDDF00', '#24CBE5'],
             borderColor: "rgba(0, 158, 219, 1)",
             borderWidth: "2",
-            data: [{{ count($profe) }}, {{ count($maestria) }}, {{ count($docto) }}, {{ count($segunda) }},0]
+            data: [{{ count($profe) }}, {{ count($maestriaa) }}, {{ count($docto) }}, {{ count($segundaa) }},0]
         }
 		]},
     options: {responsive: true}

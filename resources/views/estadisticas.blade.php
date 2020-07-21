@@ -10,4 +10,6 @@
         <a>></a>
         <a href="{{route('estadisticas')}}" class="h5 text-dark" style="background-color:white">Estadisticas</a>
     </div>
+
+
 @endsection
