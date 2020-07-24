@@ -205,7 +205,7 @@ Universidad
       $doctorado=array();
       $segunda=array();
 
-    @endphp
+      @endphp
       @foreach ($program as $p)
         @switch($p->ProNivAca)
             @case(0)
@@ -250,33 +250,6 @@ Universidad
                             @endphp
                 @endif
         @endforeach
-    <!--<div class="row ml-auto mt-4 ">
-    <div class="border border-dark rounded" id="barras" style="width: 550px; height: 400px"></div>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script>
-    google.load("visualization", "1", {packages:["corechart"]});
-    google.setOnLoadCallback(dibujarGrafico);
-    function dibujarGrafico() {
-      // Tabla de datos: valores y etiquetas de la gráfica
-      var data = google.visualization.arrayToDataTable([
-          ['Element', 'Cantidad', { role: 'style' }],
-          ['carrera profesional',{{count($carrera)}}, 'stroke-color: #900d0d; stroke-width: 4; fill-color: #cf1b1b'],
-          ['maestria', {{count($maestria)}},'stroke-color: #cf7500; stroke-width: 4; fill-color: #f0a500' ],
-          ['doctorado', {{count($doctorado)}}, 'stroke-color: #438a5e; stroke-width: 4; fill-color: #bac964'],
-          ['Segunda Especialidad', {{count($segunda)}}, 'stroke-color: #0f4c75; stroke-width: 4; fill-color: #3282b8']
-        ]);
-      var options = {
-        title: 'Total   de programas académicos'
-      }
-      // Dibujar el gráfico
-      new google.visualization.ColumnChart(
-      //ColumnChart sería el tipo de gráfico a dibujar
-        document.getElementById('barras')
-      ).draw(data, options);
-    }
-    </script>
-    </div>-->
-
 
     <!-- contenido 2-->
 <div class="content-fluid">
@@ -336,10 +309,10 @@ Universidad
                 <div class="card-body">
                   <div class="chart">
                       <canvas id="myChart" style="min-height: 250px; height: 150px; max-height: 150   px; max-width: 100%;"></canvas>
-                    </div>
+                  </div>
 
                 </div>
-              </div>
+            </div>
 
 
             <!-- /.card -->
@@ -443,11 +416,14 @@ Universidad
     var chart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Carrera Profesional', 'Maestria', 'Doctorado', 'Segunda Carrera'],
+        labels: ['Carrera Profesional',
+         'Maestria', 
+         'Doctorado', 
+         'Segunda Carrera'],
         datasets: [{
             label: 'Nivel Academico',
-            backgroundColor: ['#900d0d', '#50B432', '#9D561B', '#DDDF00', '#24CBE5'],
-            borderColor: "rgba(0, 158, 219, 1)",
+            backgroundColor: ['#cf1b1b', '#f0a500', '#bac964', '#3282b8', '#24CBE5'],
+            borderColor: ['#900d0d', '#cf7500', '#438a5e', '#0f4c75', '#24CBE5'],
             borderWidth: "2",
             data: [{{ count($profe) }}, {{ count($maestriaa) }}, {{ count($docto) }}, {{ count($segundaa) }},0]
         }
@@ -455,5 +431,5 @@ Universidad
     options: {responsive: true}
     });
     </script>
-    @endsection
+  @endsection
 

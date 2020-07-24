@@ -15,6 +15,6 @@ Route::get('/index', function () { return view('index'); })->name('index');
 Route::get('Programas/index/{uniCod}', 'ProgramasController@programas') -> name('programa/') -> where('uniCod', '[0-9]+');
 Route::get('Programas/index', 'ProgramasController@index')->name('programasacademicos');
 Route::post('Programas/index', 'ProgramasController@filtro') -> name('filtro1');
+Route::get('/estadisticas', 'EstadisticasController@index')->name('estadisticas');
 
-Route::get('/estadisticas', function () { return view('estadisticas'); })->name('estadisticas');
 
