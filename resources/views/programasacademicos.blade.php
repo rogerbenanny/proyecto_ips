@@ -28,7 +28,7 @@
                     <div class="col form-group">
                         <label for="">Grado Academico</label>
                         <select class="form-control" name="grado" id="">
-                            <option value="-1">Ninguna  </option>
+                            <option value="4">Todas</option>
                             <option value="0">Carrera Profesional</option>
                             <option value="1">Maestria</option>
                             <option value="2">Doctorado</option>

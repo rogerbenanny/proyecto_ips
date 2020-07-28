@@ -37,19 +37,12 @@ class UniversidadesController extends Controller
     }
     public function filtro (Request $request){
         error_log('INFO: filtro Universidades');
-        if ($request->get('busqueda') != null) {
-            $universidades = App\Universidad::where('UniNom', 'like', '%'.strtoupper($request->get('busqueda')).'%', 'and')
-                                            ->where('UniTipGes',$request->get('gestion'))
-                                            ->orderBy('UniNom',$request->get('orden'))
-                                            ->take($request->get('cantidad'))
-                                            ->paginate(10);
-        }
-        else{
-            $universidades = App\Universidad::where('UniTipGes',$request->get('gestion'))
-                                            ->orderBy('UniNom',$request->get('orden'))
-                                            ->take($request->get('cantidad'))
-                                            ->paginate(10);
-        }
+
+        $universidades = App\Universidad::nombre($request->get('busqueda'))
+                                        ->tipogestion($request->get('gestion'))
+                                        ->orderBy('UniNom',$request->get('orden'))
+                                        ->paginate($request->get('cantidad'));
+
         return view('universidades', compact('universidades'));
     }
 }

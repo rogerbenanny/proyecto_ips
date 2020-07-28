@@ -13,7 +13,7 @@
             <div class="container row text-center">
                 <h1 class="text-center">Programas Academicos Peru</h1>
             </div><!-- /.col -->
-            <form method="POST" action="{{route('filtro1')}}"class="form">
+            <form method="POST" action="{{route('filtro1')}}" class="form">
                 @csrf
                 <div class="row text-left">
                     <div class="col form-group ml-3">
@@ -23,6 +23,7 @@
                     <div class="col form-group">
                         <label for="">Nivel Académico</label>
                         <select class="form-control" name="nivel" id="">
+                            <option value="4">Todos</option>
                             <option value="0">Carrera Profesional</option>
                             <option value="1">Maestría</option>
                             <option value="2">Doctorado</option>
@@ -43,8 +44,6 @@
                             <option value="20">20</option>
                             <option value="50">50</option>
                             <option value="100">100</option>
-                            <option value="200">200</option>
-
                         </select>
                     </div>
                     <div class="col form-group">
@@ -53,15 +52,11 @@
                 </div>
             </form>
             <div class="row pl-2">
-                <table   class="table table-bordered table-striped text-left">
+                <table class="table table-bordered table-striped text-left">
                     <thead>
                       <tr>
-
                         <th scope="col">Nombre</th>
                         <th scope="col">Nivel Academico</th>
-
-
-                        <th></th>
                       </tr>
                     </thead>
                     <tbody>

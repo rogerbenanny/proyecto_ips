@@ -27,6 +27,7 @@
                         <div class="col form-group">
                             <label for="">Gestión</label>
                             <select class="form-control" name="gestion" id="">
+                                <option value="2">Todos</option>
                                 <option value="0">Público</option>
                                 <option value="1">Privado</option>
 
@@ -45,7 +46,6 @@
                                 <option value="10">10</option>
                                 <option value="20">20</option>
                                 <option value="50">50</option>
-                                <option value="100">100</option>
                                 <option value="100">100</option>
                             </select>
                         </div>

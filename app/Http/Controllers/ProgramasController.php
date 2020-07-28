@@ -10,12 +10,8 @@ class ProgramasController extends Controller
     public function index()
     {
         error_log('INFO: lista Programas');
-        $programas = App\Programas :: orderBy('ProNom', 'asc')->paginate(10);
-        //$universidad = App\Universidad::all();
-        //$filiales =App\Filiales::all();
-        //$locales =App\Locales::all();
-        //$localesprogramas=App\LocalesProgramas::all();
-        return view('Programas/index', compact('programas'));//,'filiales','universidad','locales','localesprogramas'));
+        $programas = App\Programas::orderBy('ProNom', 'asc')->paginate(10);
+        return view('Programas/index', compact('programas'));
     }
     public function programas ($proCod = null)
     {
@@ -33,17 +29,11 @@ class ProgramasController extends Controller
 
     public function filtro (Request $request){
         error_log('INFO: filtro Programas');
-        if ($request->get('busqueda') != null) {
-            $programas = App\Programas::where('ProNom', 'like', '%'.strtoupper($request->get('busqueda')).'%', 'and')
-                                            ->where('ProNivAca',$request->get('nivel'))
-                                            ->orderBy('ProNom',$request->get('orden'))
-                                            ->paginate($request->get('cantidad'));
-        }
-        else{
-            $programas = App\Programas::where('ProNivAca',$request->get('nivel'))
-                                            ->orderBy('ProNom',$request->get('orden'))
-                                            ->paginate($request->get('cantidad'));
-        }
+        $programas = App\Programas::nombre($request->get('busqueda'))
+                                ->nivelgestion($request->get('nivel'))
+                                ->orderBy('ProNom',$request->get('orden'))
+                                ->paginate($request->get('cantidad'));
+
         return view('Programas/index', compact('programas'));
     }
 }
