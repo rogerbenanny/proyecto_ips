@@ -21,6 +21,9 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="stylesheet"></link>
+
     </head>
     <body class="hold-transition sidebar-mini sidebar-collapse">
         <!-- Site wrapper -->
@@ -32,13 +35,15 @@
             @include("theme.$theme.aside")
             <!--Fin aside-->
 
-                        @yield('contenido')
+                @yield('contenido')
 
             <!--Inicio footer-->
             <!--@include('theme/lte/footer')-->
             <!--Fin footer-->
         </div>
-        <script src="{{asset("assets/$theme/plugins/jquery/jquery.min.js")}}"></script>
+
+        <script type="text/javascript" src="{{asset("assets/lte/plugins/jquery/jquery.min.js")}}"></script>
+        <script type="text/javascript" src="{{asset("assets/lte/plugins/jquery-ui/jquery-ui.min.js")}}"></script>
         <!-- Bootstrap 4 -->
         <script src="{{asset("assets/$theme/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
         <!-- jsGrid -->
@@ -55,7 +60,7 @@
         <script src="{{asset("assets/$theme/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
         <script src="{{asset("assets/$theme/plugins/datatables-responsive/js/dataTables.responsive.min.js")}}"></script>
         <script src="{{asset("assets/$theme/plugins/datatables-responsive/js/responsive.bootstrap4.min.js")}}"></script>
-        <script src="https://kit.fontawesome.com/2d377ef0a3.js" crossorigin="anonymous"></script>
+
         <script>
             $(function () {
               $("#example1").DataTable({

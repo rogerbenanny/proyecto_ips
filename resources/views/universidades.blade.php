@@ -22,7 +22,7 @@
                     <div class="row text-left">
                         <div class="col form-group ml-3">
                             <label for="buscar">Buscar</label>
-                            <input class="form-control" name="busqueda" type="text" placeholder="Búsqueda" aria-label="Search" >
+                            <input class="form-control" id="buscaUni" name="busqueda" type="text" placeholder="Búsqueda" aria-label="Search" >
                         </div>
                         <div class="col form-group">
                             <label for="">Gestión</label>
@@ -85,4 +85,10 @@
             </div>
         </div>
 </div>
+
+<script type="text/javascript" src="{{asset("assets/lte/plugins/jquery/jquery.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("assets/lte/plugins/jquery-ui/jquery-ui.min.js")}}"></script>
+<script type="text/javascript" src="/js/autocomplete.js"></script>
+
+
 @endsection

@@ -39,7 +39,7 @@ class UniversidadesController extends Controller
         error_log('INFO: filtro Universidades');
 
         $universidades = App\Universidad::nombre($request->get('busqueda'))
-                                        ->tipogestion($request->get('gestion'))
+                                        ->nivel($request->get('gestion'))
                                         ->orderBy('UniNom',$request->get('orden'))
                                         ->paginate($request->get('cantidad'));
 
