@@ -8,18 +8,14 @@ Universidad
 @section('contenido')
 
 <div class="content-wrapper">
-<!--<div class="main-header">
+<div class="main-header">
       <a href="{{route('ini')}}" class="h5 text-info">Inicio</a>
       <a class="h5 text-dark">></a>
       <a href="{{route('universidades')}}" class="h5 text-info">Universidades</a>
       <a class="h5 text-dark">></a>
       <a  class="h5 text-dark" >{{$universidad->UniNom}} </a>
-  </div>-->
-  <div class="container-fluid ">
-    <div class="text-center ">
-      <!--<a  class="h4 text-dark ">{{$universidad->UniNom}}</a>-->
   </div>
-  </div>
+  
 
 
    <!--<div class="col-6 content-fluid">
@@ -350,11 +346,11 @@ Universidad
                                     @if($d->DepCod==$dp->DepCod)
 
                                     <td >
-                                    <a  class=" text-dark text-left" >Gestion: {{$universidad->UniTipGes == 0 ? 'Publico' : 'Privado'}}</a>
+                                    <a  class=" h6 text-dark" >Gestion: {{$universidad->UniTipGes == 0 ? 'Publico' : 'Privado'}}</a>
                                     <br>
-                                    <a  class="text-dark text-left" >Departamento: {{$dp->DepNom}}</a>
+                                    <a  class="h6 text-dark" >Departamento: {{$dp->DepNom}}</a>
                                     <br>
-                                    <a  class=" text-dark text-left" >Provincia: {{$d->DirProNom}}</a>
+                                    <a  class=" h6 text-dark" >Provincia: {{$d->DirProNom}}</a>
                                     <br>
                                     </td>
 
@@ -370,12 +366,12 @@ Universidad
                                 @if ($f->FilCod==$l->FilCod)
 
 
-                                <a href="{{route('universidades/locales',$l->LocCod )}}" class="text-dark text-left" >Local {{$cf}}:</a>
+                                <a  class="btn btn-secondary" href="{{route('universidades/locales',$l->LocCod )}}"  >Local {{$cf}}:</a>
                                 <br>
-                                <a  class=" text-dark text-left" >Distrito: {{$l->LocDis}}</a>
+                                <a  class=" h6   text-dark" >Distrito: {{$l->LocDis}}</a>
                                 <br>
 
-
+                              
                             @php
                                 $cf+=1;
                             @endphp

@@ -2,15 +2,16 @@
 @section('titulo')
     Programas Academicos
 @endsection
-
 @section('contenido')
-
-
-<div class="container-fluid main-header text-center">
-    <div class="row justify-content-center">
-
-        <div class="col-8 mt-3 text-center">
-            <div class="container row text-center">
+<div class="content-wrapper">
+    <div class="main-header">
+        <a href="\" class="h5 text-info ">Inicio</a>
+        <a>></a>
+        <a href="{{route('programasacademicos')}}" class="h5 text-dark">Programas Académicos</a>
+    </div>
+    <div class="row justify-content-center main-header">
+        <div class="col-9 mt-3 text-center">
+            <div class="container text-center">
                 <h1 class="text-center">Programas Academicos Peru</h1>
             </div><!-- /.col -->
             <form method="POST" action="{{route('filtro1')}}" class="form">
@@ -46,17 +47,18 @@
                             <option value="100">100</option>
                         </select>
                     </div>
-                    <div class="col form-group">
+                    <div class="col form-group mt-4">
                         <button type="submit" class="btn btn-success btn-lg">Aplicar</button>
                     </div>
                 </div>
             </form>
             <div class="row pl-2">
                 <table class="table table-bordered table-striped text-left">
-                    <thead>
+                    <thead class="thead-dark">
                       <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Nivel Academico</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -97,5 +99,9 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="{{asset("assets/lte/plugins/jquery/jquery.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("assets/lte/plugins/jquery-ui/jquery-ui.min.js")}}"></script>
+<script type="text/javascript" src="/js/autocomplete.js"></script>
 @endsection
 

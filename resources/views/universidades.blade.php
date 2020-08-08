@@ -69,7 +69,7 @@
                                 <tr>
                                         <td>{{$uni->UniNom}}</td>
                                         <td>{{$uni->UniTipGes == 0 ? 'Publico' : 'Privado'}}</td>
-                                        <td><button type="button" class="btn btn-block btn-info btn-sm"><a href="{{route('universidades/',$uni->UniCod )}}" style="color:white";>Detalles</button></td>
+                                        <td><a class="btn btn-info " href="{{route('universidades/',$uni->UniCod )}}" >Detalles</a></td>
 
                                 </tr>
                                 @endforeach
