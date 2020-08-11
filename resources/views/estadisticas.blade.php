@@ -15,7 +15,7 @@
             $depart=array();
             $i=0;
         @endphp
-        
+
         @foreach ($departamentos as $d)
             @php
                 $depart[]=0;
@@ -23,25 +23,25 @@
         @endforeach
         @foreach ($departamentos as $dep)
             @foreach ($direcciones as $dir)
-               @if ($dep->DepCod==$dir->DepCod)    
+               @if ($dep->DepCod==$dir->DepCod)
                     @foreach ($filiales as $fil)
                         @if ($fil->DirCod==$dir->DirCod)
                            @php
                                $depart[$i]+=1;
-                               
-                           @endphp 
-                        @endif    
+
+                           @endphp
+                        @endif
 
                     @endforeach
 
                @endif
-               
+
             @endforeach
             @php
                 $i++;
             @endphp
         @endforeach
-    <div class="row ml-5 justify-content-center">   
+    <div class="row ml-5 justify-content-center">
     <div  >
         <div id="piechart_3d" style="width: 1000px; height: 700px;"></div>
     </div>
@@ -78,10 +78,10 @@
             ['Tumbes',     {{$depart[23]}}],
             ['Ucayali',     {{$depart[24]}}],
           ]);
-  
+
           var options = {
             title: 'Filiales por Departamento',
-          
+
 
             is3D: true,
             backgroundColor:'transparent',
@@ -90,12 +90,12 @@
                             fontSize: '30',
                             bold: true,
                             italic: false,
-                            
+
                             },
-        
+
 
           };
-  
+
           var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
           chart.draw(data, options);
         }
