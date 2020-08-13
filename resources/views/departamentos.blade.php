@@ -6,7 +6,7 @@
 @section('contenido')
 <div class="content-wrapper ">
     <div class="ml-2">
-        <a href="" class="h5 text-info ml-5" >Inicio</a>
+        <a href="\" class="h5 text-info ml-5" >Inicio</a>
         <a>></a>
         <a href="{{route('departamentos')}}" class="h5 text-dark" >Departamentos</a>
     </div>
